@@ -10,6 +10,7 @@ $factory->define(Cat::class, function (Faker $faker) {
     return [
 
       "name" => $faker -> word,
-      "race" => $faker -> word(2)
+      "race" => $faker -> sentence(2),
+      "img_cat_id" => $faker -> unique() -> biasedNumberBetween(1,30)
     ];
 });

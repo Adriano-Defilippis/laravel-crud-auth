@@ -14,7 +14,7 @@
           </div>
         @endauth
         <div class="img_profile">
-          <img src="" alt="">
+            <img src="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg" alt="{{ $cat -> imgCat -> src }}">
         </div>
       </div>
     @endforeach

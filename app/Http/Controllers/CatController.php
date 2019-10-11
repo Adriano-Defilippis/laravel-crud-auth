@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cat;
+use App\Img_cat;
 
 class CatController extends Controller
 {
@@ -15,7 +16,8 @@ class CatController extends Controller
     public function index()
     {
         $cats = Cat::all();
-        return view('page.index_cats', compact('cats'));
+        $img_cats = Img_cat::all();
+        return view('page.index_cats', compact('cats', 'img_cats'));
     }
 
     /**

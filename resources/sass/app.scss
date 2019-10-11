@@ -20,14 +20,17 @@
 
   .box{
 
-    background-color: $purple;
+
+    border: 4px solid $purple;
 
     border-radius: 20px;
     margin-bottom: 20px;
 
     font-size: 1.1rem;
 
-    color: white;
+    color: $purple;
+    text-transform: capitalize;
+
     width: calc(100vw / 2 - 10px);
 
     padding: 20px;
@@ -35,6 +38,7 @@
     position: relative;
     span{
       font-weight: bold;
+
     }
 
     a{
@@ -58,12 +62,15 @@
 
       width: 75px;
       height: 75px;
-      background-color: black;
+
       position: absolute;
       top: 20px;
       right: 20px;
 
+      border-radius: 50%;
+
       img{
+        border-radius: 50%;
         width: 100%;
         height: 100%;
       }

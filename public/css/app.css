@@ -10655,11 +10655,12 @@ a.text-dark:focus {
 }
 
 .box-wrapper .box {
-  background-color: #9561e2;
+  border: 4px solid #9561e2;
   border-radius: 20px;
   margin-bottom: 20px;
   font-size: 1.1rem;
-  color: white;
+  color: #9561e2;
+  text-transform: capitalize;
   width: calc(100vw / 2 - 10px);
   padding: 20px;
   position: relative;
@@ -10686,13 +10687,14 @@ a.text-dark:focus {
 .box-wrapper .box .img_profile {
   width: 75px;
   height: 75px;
-  background-color: black;
   position: absolute;
   top: 20px;
   right: 20px;
+  border-radius: 50%;
 }
 
 .box-wrapper .box .img_profile img {
+  border-radius: 50%;
   width: 100%;
   height: 100%;
 }

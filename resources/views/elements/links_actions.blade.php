@@ -1,2 +1,2 @@
-<a href="#">EDIT</a>
-<a href="#">DELETE</a>
+<a class="link-btn" href="#">EDIT</a>
+<a class="link-btn" href="#">DELETE</a>

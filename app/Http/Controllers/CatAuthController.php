@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cat;
 
 class CatAuthController extends Controller
 {
@@ -56,7 +57,11 @@ class CatAuthController extends Controller
      */
     public function show($id)
     {
-        //
+
+      $cat = Cat::findOrFail($id);
+      
+
+      return view('page.show_profile', compact('cat'));
     }
 
     /**
@@ -90,6 +95,8 @@ class CatAuthController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cat = Cat::findOrFail($id);
+        dd($cat);
+
     }
 }

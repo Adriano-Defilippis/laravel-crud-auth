@@ -14,7 +14,9 @@
           </div>
         @endauth
         <div class="img_profile">
-            <img src="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg" alt="{{ $cat -> imgCat -> src }}">
+            <a href="{{ route('cats.show', $cat -> id ) }}">
+              <img src="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg" alt="{{ $cat -> imgCat -> src }}">
+            </a>
         </div>
       </div>
     @endforeach

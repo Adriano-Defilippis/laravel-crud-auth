@@ -59,7 +59,7 @@ class CatAuthController extends Controller
     {
 
       $cat = Cat::findOrFail($id);
-      
+
 
       return view('page.show_profile', compact('cat'));
     }
@@ -95,8 +95,11 @@ class CatAuthController extends Controller
      */
     public function destroy($id)
     {
-        $cat = Cat::findOrFail($id);
-        dd($cat);
+        $cat = Cat::findOrFail($id) -> delete();
+
+
+
+        return redirect()->back();
 
     }
 }

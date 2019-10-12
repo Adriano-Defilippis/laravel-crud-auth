@@ -8,6 +8,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'CatController@index')->name('home');
-
+Route::get('/cats/delete/{id}', 'CatAuthController@destroy')->name('cat.destroy');
 
 Route::resource('cats', 'CatAuthController');

@@ -15,6 +15,28 @@
   list-style: none;
 }
 
+header.main-header{
+    font-size: 1.2rem;
+    padding: 20px;
+  nav{
+
+    ul.flex{
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav-right{
+        width: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
 
 .container{
   z-index: -2;

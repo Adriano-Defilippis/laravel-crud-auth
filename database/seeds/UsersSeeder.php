@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Cat;
-use App\Img_cat;
+use App\User;
 
-class Img_catsSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +12,6 @@ class Img_catsSeeder extends Seeder
      */
     public function run()
     {
-        factory(Img_cat::class, 10) -> create();
-
+        factory(User::class, 10) -> create();
     }
 }

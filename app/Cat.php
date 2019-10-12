@@ -10,11 +10,17 @@ class Cat extends Model
     protected $fillable =[
       "name",
       "race",
-      "img_cat_id"
+      "img_cat_id",
+      "user_id"
     ];
 
     public function imgCat(){
 
       return $this -> belongsTo(Img_cat::class);
+    }
+
+    public function user(){
+
+      return $this -> belongsTo(User::class);
     }
 }

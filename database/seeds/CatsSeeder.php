@@ -15,7 +15,7 @@ class CatsSeeder extends Seeder
     {
 
 
-        factory(Cat::class, 30) -> create();
+        factory(Cat::class, 10) -> create();
         //   -> make()
         //   -> each(function($cat) {
         //

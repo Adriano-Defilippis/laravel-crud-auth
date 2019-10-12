@@ -17,7 +17,17 @@
 
 header.main-header{
     font-size: 1.2rem;
-    padding: 20px;
+
+    background-color: $blue;
+
+
+    a{
+      color: white;
+
+      font-weight: bold;
+      text-transform: uppercase;-
+    }
+
   nav{
 
     ul.flex{
@@ -26,13 +36,21 @@ header.main-header{
       justify-content: space-between;
       align-items: center;
 
+      padding-left: 0px;
+      margin-bottom: 0px;
+
+      padding: 20px 10px;
       .nav-right{
         width: 50%;
 
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        li{
+          margin-right: 10px;
+        }
       }
+
     }
   }
 }

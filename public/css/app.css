@@ -10651,13 +10651,21 @@ a.text-dark:focus {
 
 header.main-header {
   font-size: 1.2rem;
-  padding: 20px;
+  background-color: #3490dc;
+}
+
+header.main-header a {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 header.main-header nav ul.flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 0px;
+  margin-bottom: 0px;
 }
 
 header.main-header nav ul.flex .nav-right {
@@ -10665,6 +10673,10 @@ header.main-header nav ul.flex .nav-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+header.main-header nav ul.flex .nav-right li {
+  margin-right: 10px;
 }
 
 .container {

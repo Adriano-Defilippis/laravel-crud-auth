@@ -25,9 +25,9 @@
       <ul class="flex">
         <li><a href="{{ url('/') }}">Blog Gattini</a></li>
         <div class="nav-right">
-          
+          @if (Route::current()->getName() != 'home')
             <li><a href="{{ route('home') }}">Home</a></li>
-
+          @endif
         @guest
           <li><a href="{{ route('login') }}">Log-in</a> </li>
 

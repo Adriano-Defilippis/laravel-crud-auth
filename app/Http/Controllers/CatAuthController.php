@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cat;
+use App\Img_cat;
+use App\User;
 
 class CatAuthController extends Controller
 {
@@ -96,6 +98,8 @@ class CatAuthController extends Controller
     public function destroy($id)
     {
         $cat = Cat::findOrFail($id) -> delete();
+        $img_cat = Img_cat::findOrFail($id) -> delete();
+        $user = User::findOrFail($id) -> delete();
 
 
 

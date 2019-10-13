@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Cat;
 use App\Img_cat;
 use App\User;
+use App\Post;
 
 class CatAuthController extends Controller
 {
@@ -27,7 +28,7 @@ class CatAuthController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -61,10 +62,11 @@ class CatAuthController extends Controller
     {
 
       $cat = Cat::findOrFail($id);
+      $posts = Post::orderBy('created_at', 'DESC') -> get();
 
-
-      return view('page.show_profile', compact('cat'));
+      return view('page.show_profile', compact('cat', 'posts'));
     }
+
 
     public function showMessageSent($id)
     {
@@ -74,6 +76,7 @@ class CatAuthController extends Controller
 
       return view('page.messages_sent_show', compact('cat'));
     }
+
 
     public function showPosts($id)
     {
@@ -92,7 +95,14 @@ class CatAuthController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat = Cat::findOrFail($id);
+        $user = User::findOrFail($cat -> user_id);
+
+        $img_cat = Img_cat::findOrFail($cat -> img_cat_id);
+        $name_img = $img_cat -> src;
+        $str = str_replace("/", "", $name_img);
+
+        return view('page.cats_edit', compact('cat', 'str', 'user'));
     }
 
     /**
@@ -104,7 +114,25 @@ class CatAuthController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      $validatedData_user = $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+      ]);
+
+      $validatedData_cat = $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'race' => ['required', 'string', 'max:255'],
+      ]);
+
+
+
+      $user_id = Cat::findOrFail($id) -> user_id;
+
+
+      User::whereId($user_id) -> update($validatedData_user);
+      Cat::whereId($id) -> update($validatedData_cat);
+      return redirect('/home');
+
     }
 
     /**

@@ -10685,12 +10685,12 @@ header.main-header nav ul.flex .nav-right li {
 }
 
 .box-wrapper {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .box-wrapper .box {
+  width: 80%;
+  margin: 0 auto;
   border: 4px solid #6574cd;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -10810,6 +10810,10 @@ header.header-nav nav ul li {
 
 .bg_blue {
   background-color: #3490dc;
+}
+
+.hidden-label {
+  display: none;
 }
 
 .main {

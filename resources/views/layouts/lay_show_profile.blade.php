@@ -74,7 +74,7 @@
               <ul>
                 <li><a href="{{route('post.show', $cat -> id)}}">Post</a></li>
               @if (Auth::user()-> id == $cat -> user_id )
-                <li><a href="#">New Post</a></li>
+                <li><a href="{{route('post.createpost', $cat -> id)}}">New Post</a></li>
               @else
                 <li><a href="#">Write a message</a></li>
               @endif

@@ -119,6 +119,12 @@ class CatAuthController extends Controller
         $id_img = $cat-> img_cat_id;
         $id_user = $cat -> user_id;
 
+        $img_name = Img_cat::findOrFail($id_img) -> src;
+        $str = str_replace("/", "", $img_name);
+        $image_path = public_path("img/$str");
+        unlink($image_path);
+
+
         $cat = Cat::findOrFail($id) -> delete();
         $img_cat = Img_cat::findOrFail($id_img) -> delete();
         $user = User::findOrFail($id_user) -> delete();

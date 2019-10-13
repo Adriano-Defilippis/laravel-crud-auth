@@ -1,21 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.lay_show_profile')
 
 @section('content')
 
-  <div class="container">
-    <div class="landscape">
-      <img class="img-landscape"  src="../img/12/12_landscape.jpg" alt="landscape.jpg">
-      <div class="img-profile">
-        <img src="../img{{ $cat -> imgCat -> src }}" alt="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg">
-      </div>
-    </div>
-    <header class="header-nav">
-      <nav>
-        <ul>
-          <li>new post</li>
-        </ul>
-      </nav>
-    </header>
-  </div>
+  {{-- @dd(Auth::user()-> id == $cat -> user_id) --}}
+
+  <h1>Lista psots</h1>
 
 @endsection

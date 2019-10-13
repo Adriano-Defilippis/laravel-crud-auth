@@ -8,11 +8,11 @@
         <p>{{ $cat -> name }}</p>
         <span>Race</span>
         <p>{{ $cat -> race }}</p>
-        @auth
+        @if(Auth::user()-> id == $cat -> user_id)
           <div class="actions">
             @include('elements.links_actions')
           </div>
-        @endauth
+        @endif
         <div class="img_profile">
             <a href="{{ route('cats.show', $cat -> id ) }}">
               <img src="/img{{ $cat -> imgCat -> src }}" alt="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg">

@@ -66,6 +66,24 @@ class CatAuthController extends Controller
       return view('page.show_profile', compact('cat'));
     }
 
+    public function showMessageSent($id)
+    {
+
+      $cat = Cat::findOrFail($id);
+
+
+      return view('page.messages_sent_show', compact('cat'));
+    }
+
+    public function showPosts($id)
+    {
+
+      $cat = Cat::findOrFail($id);
+
+
+      return view('page.show_profile', compact('cat'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -97,13 +115,15 @@ class CatAuthController extends Controller
      */
     public function destroy($id)
     {
+        $cat = Cat::findOrFail($id);
+        $id_img = $cat-> img_cat_id;
+        $id_user = $cat -> user_id;
+
         $cat = Cat::findOrFail($id) -> delete();
-        $img_cat = Img_cat::findOrFail($id) -> delete();
-        $user = User::findOrFail($id) -> delete();
+        $img_cat = Img_cat::findOrFail($id_img) -> delete();
+        $user = User::findOrFail($id_user) -> delete();
 
-
-
-        return redirect()->back();
+        return redirect('welcome');
 
     }
 }

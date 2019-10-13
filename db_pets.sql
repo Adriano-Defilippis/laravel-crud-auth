@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Ott 12, 2019 alle 22:01
+-- Creato il: Ott 14, 2019 alle 01:37
 -- Versione del server: 10.4.6-MariaDB
 -- Versione PHP: 7.2.22
 
@@ -34,44 +34,17 @@ CREATE TABLE `cats` (
   `race` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `img_cat_id` bigint(20) UNSIGNED NOT NULL
+  `img_cat_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `cats`
 --
 
-INSERT INTO `cats` (`id`, `name`, `race`, `created_at`, `updated_at`, `img_cat_id`) VALUES
-(1, 'corporis', 'Soluta atque qui.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 16),
-(2, 'possimus', 'Sed quos in.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 8),
-(3, 'est', 'Fuga omnis qui.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 25),
-(4, 'soluta', 'Et eveniet quas.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 23),
-(5, 'dolorem', 'Vel accusantium autem.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 11),
-(6, 'enim', 'Molestiae eos.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 9),
-(7, 'aliquid', 'Earum officiis.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 28),
-(8, 'dicta', 'Totam quod.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 17),
-(9, 'aut', 'Distinctio magnam aut.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 27),
-(10, 'consequuntur', 'Quo quod et.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 14),
-(11, 'accusamus', 'Quis qui.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 18),
-(12, 'laudantium', 'At blanditiis quis.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 29),
-(13, 'sit', 'Sunt eaque.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 3),
-(14, 'ab', 'Et ipsam.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 7),
-(15, 'asperiores', 'Assumenda beatae.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 22),
-(16, 'possimus', 'Inventore non eligendi.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 20),
-(17, 'sed', 'Eligendi qui.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 5),
-(18, 'illum', 'Voluptates perspiciatis.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 19),
-(19, 'consectetur', 'Nihil libero.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 6),
-(20, 'numquam', 'Consequatur est delectus.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 30),
-(21, 'ut', 'Non omnis.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 12),
-(22, 'fugiat', 'Quis ut dolores.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 10),
-(23, 'expedita', 'Odit dolorum.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 26),
-(24, 'non', 'Voluptates sint dolorum.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 21),
-(25, 'numquam', 'Enim ab.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 1),
-(26, 'nesciunt', 'Natus esse.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 24),
-(27, 'cumque', 'Quaerat laborum consequatur.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 13),
-(28, 'distinctio', 'Soluta hic ut.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 15),
-(29, 'esse', 'Quo amet ut.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 4),
-(30, 'laboriosam', 'Libero sapiente animi.', '2019-10-11 18:52:24', '2019-10-11 18:52:24', 2);
+INSERT INTO `cats` (`id`, `name`, `race`, `created_at`, `updated_at`, `img_cat_id`, `user_id`) VALUES
+(1, 'GAttino speranzosso', 'Soriano', '2019-10-13 18:49:32', '2019-10-13 18:49:32', 1, 1),
+(2, 'Gattino Gajardo', 'Romana', '2019-10-13 21:19:16', '2019-10-13 21:19:16', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -106,36 +79,8 @@ CREATE TABLE `img_cats` (
 --
 
 INSERT INTO `img_cats` (`id`, `src`, `created_at`, `updated_at`) VALUES
-(1, 'sapiente', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(2, 'ut', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(3, 'enim', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(4, 'eos', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(5, 'blanditiis', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(6, 'veritatis', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(7, 'aut', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(8, 'amet', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(9, 'in', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(10, 'non', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(11, 'culpa', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(12, 'error', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(13, 'tenetur', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(14, 'dolorem', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(15, 'ex', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(16, 'aliquam', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(17, 'ab', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(18, 'incidunt', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(19, 'quae', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(20, 'sunt', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(21, 'ipsa', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(22, 'placeat', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(23, 'expedita', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(24, 'a', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(25, 'molestiae', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(26, 'sequi', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(27, 'assumenda', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(28, 'ducimus', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(29, 'vitae', '2019-10-11 18:52:24', '2019-10-11 18:52:24'),
-(30, 'rerum', '2019-10-11 18:52:24', '2019-10-11 18:52:24');
+(1, '/1_25_sapiente.jpg', '2019-10-13 18:49:32', '2019-10-13 18:49:32'),
+(2, '/2_12_vitae.jpg', '2019-10-13 21:19:16', '2019-10-13 21:19:16');
 
 -- --------------------------------------------------------
 
@@ -158,8 +103,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_10_11_001_create_cats_table', 1),
-(5, '2019_10_11_00_create_img_cats_table', 1),
-(6, '2019_10_11_134901_add_foreing_key', 1);
+(5, '2019_10_11_001_create_posts_table', 1),
+(6, '2019_10_11_00_create_img_cats_table', 1),
+(7, '2019_10_11_134901_add_foreing_key', 1);
 
 -- --------------------------------------------------------
 
@@ -172,6 +118,36 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `cat_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dump dei dati per la tabella `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `text`, `created_at`, `updated_at`, `cat_id`) VALUES
+(1, 'Corrupti laboriosam sint provident repudiandae est autem tempore exercitationem voluptatem.    gggggg', 'ggggg', '2019-10-13 19:50:36', '2019-10-13 19:50:36', 1),
+(2, 'Corrupti laboriosam sint provident repudiandae est autem tempore exercitationem voluptatem.    gggggg', 'ggggg', '2019-10-13 19:52:18', '2019-10-13 19:52:18', 1),
+(3, 'Corrupti laboriosam sint provident repudiandae est autem tempore exercitationem voluptatem.    gggggg', 'ggggg', '2019-10-13 19:55:48', '2019-10-13 19:55:48', 1),
+(4, 'sss', 'sssssssssss ccccccccccccccccc', '2019-10-13 19:57:04', '2019-10-13 19:57:04', 1),
+(5, 'xfg', 'sdfsdfgsdfg', '2019-10-13 19:58:34', '2019-10-13 19:58:34', 1),
+(6, 'xfg', 'sdfsdfgsdfg', '2019-10-13 20:00:32', '2019-10-13 20:00:32', 1),
+(7, 'sss', 'sssssss', '2019-10-13 20:03:29', '2019-10-13 20:03:29', 1),
+(8, 'sss', 'sssssss', '2019-10-13 20:14:55', '2019-10-13 20:14:55', 1),
+(9, 'ioio', 'ioioioioi', '2019-10-13 21:26:01', '2019-10-13 21:26:01', 2);
 
 -- --------------------------------------------------------
 
@@ -195,7 +171,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Jack il gattino', 'prova@hotm.it', NULL, '$2y$10$Wvki6jxd.YZun9ZrUQZiIu9ClOHp2ufu/jIcvgsg32Fx/WdHkSvhu', NULL, '2019-10-11 20:04:12', '2019-10-11 20:04:12');
+(1, 'GAttino speranzosso', 'aaaaadsdfsdfddda@gggg.com', NULL, '$2y$10$OSRsgv8208axOMyk9IML2OzPNrebSg2vsVZ0IJFLwYi/ivtC/Q4Da', NULL, '2019-10-13 18:49:32', '2019-10-13 18:49:32'),
+(2, 'Gattino Gajardo', 'prov22322212222@hotm.it', NULL, '$2y$10$ABDQAiOFo.Y4iUNc95bwM.kOsbRpgTH5N2CZSwwiVrocfccPaeaye', NULL, '2019-10-13 21:19:16', '2019-10-13 21:19:16');
 
 --
 -- Indici per le tabelle scaricate
@@ -207,7 +184,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 ALTER TABLE `cats`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `cats_id_unique` (`id`),
-  ADD KEY `cats_img_cat_id_index` (`img_cat_id`);
+  ADD KEY `catImg` (`img_cat_id`),
+  ADD KEY `userCat` (`user_id`);
 
 --
 -- Indici per le tabelle `failed_jobs`
@@ -235,6 +213,13 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indici per le tabelle `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `postCat` (`cat_id`);
+
+--
 -- Indici per le tabelle `users`
 --
 ALTER TABLE `users`
@@ -249,7 +234,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT per la tabella `cats`
 --
 ALTER TABLE `cats`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `failed_jobs`
@@ -261,19 +246,25 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT per la tabella `img_cats`
 --
 ALTER TABLE `img_cats`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT per la tabella `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT per la tabella `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Limiti per le tabelle scaricate
@@ -283,7 +274,14 @@ ALTER TABLE `users`
 -- Limiti per la tabella `cats`
 --
 ALTER TABLE `cats`
-  ADD CONSTRAINT `catImg` FOREIGN KEY (`img_cat_id`) REFERENCES `img_cats` (`id`);
+  ADD CONSTRAINT `catImg` FOREIGN KEY (`img_cat_id`) REFERENCES `img_cats` (`id`),
+  ADD CONSTRAINT `userCat` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Limiti per la tabella `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `postCat` FOREIGN KEY (`cat_id`) REFERENCES `cats` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

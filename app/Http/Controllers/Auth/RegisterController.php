@@ -50,11 +50,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'race' => ['required', 'string', 'max:255'],
+            'src' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
     }
@@ -67,23 +69,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
 
-        $img_cat = Img_cat::create([
-            'src' => 'img/' . $user -> id . '_' . $user -> email
-        ]);
 
-        $cat = Cat::create([
-            'name' => $data['name'],
-            'race' => $data['race'],
-            'img_cat_id' =>  $img_cat -> id,
-            'user_id' => $user -> id,
-        ]);
 
-        return $user;
+      $user = User::create([
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'password' => Hash::make($data['password']),
+      ]);
+
+      $image = $data['src'];
+
+      $name = $user -> id . '_' . $image->getClientOriginalName();
+      $image->move(public_path('img'), $name);
+
+      $img_cat = Img_cat::create([
+          'src' => '/' . $name
+      ]);
+
+
+      $cat = Cat::create([
+          'name' => $data['name'],
+          'race' => $data['race'],
+          'img_cat_id' =>  $img_cat -> id,
+          'user_id' => $user -> id,
+      ]);
+
+      return $user;
     }
 }

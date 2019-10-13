@@ -6,7 +6,7 @@
     <div class="landscape">
       <img class="img-landscape"  src="../img/12/12_landscape.jpg" alt="landscape.jpg">
       <div class="img-profile">
-        <img src="../img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg" alt="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg">
+        <img src="../img{{ $cat -> imgCat -> src }}" alt="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg">
       </div>
     </div>
     <header class="header-nav">

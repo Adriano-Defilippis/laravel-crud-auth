@@ -10649,6 +10649,10 @@ a.text-dark:focus {
   list-style: none;
 }
 
+a {
+  cursor: pointer;
+}
+
 header.main-header {
   font-size: 1.2rem;
   background-color: #3490dc;

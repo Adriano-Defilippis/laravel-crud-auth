@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 
 class PostAuthController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +33,9 @@ class PostAuthController extends Controller
      */
     public function create()
     {
-        //
+        // return response()->json(array('msg'=> $msg), 200);
+
+        // return view('page.post_create');
     }
 
     /**

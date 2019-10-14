@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cat;
+use App\Post;
+use App\Img_cat;
+use App\User;
 
 class CatAuthController extends Controller
 {
@@ -59,7 +62,10 @@ class CatAuthController extends Controller
      */
     public function show($id)
     {
-        //
+        $cat = Cat::findOrFail($id);
+        $posts = Post::orderBy('updated_at', "DESC") ->get();
+
+        return view ('page.show_profile', compact('cat', 'posts'));
     }
 
     /**

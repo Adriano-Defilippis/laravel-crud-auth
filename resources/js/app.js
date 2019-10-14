@@ -30,3 +30,57 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+$(document).ready(init);
+
+function init(){
+
+  $(document).on('click', '#new-post-ajax-link', ajaxCreateFormPost);
+  $(document).on('click', '#show-post-ajax-link', ajaxShowPostIndex);
+}
+
+
+function ajaxCreateFormPost(){
+
+
+  $.ajax({
+
+    url: '/post/ajaxcreate',
+    method: 'GET',
+    data: {
+      "img_cat_id" : 2,
+    },
+
+    success: function (response){
+
+      $('div.main').html(response);
+    },
+
+    error: function(error){
+
+      console.log(error,'errore');
+    }
+  });
+}
+
+function ajaxShowPostIndex(){
+
+  $.ajax({
+
+    url: '/post/ajaxshowpost',
+    method: 'GET',
+    data: {
+
+    },
+
+    success: function (response){
+
+      $('div.main').html(response);
+    },
+
+    error: function(error){
+
+      console.log(error,'errore');
+    }
+  });
+}

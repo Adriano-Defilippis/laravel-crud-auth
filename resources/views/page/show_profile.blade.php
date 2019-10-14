@@ -1,33 +1,37 @@
-@extends('layouts.lay_show_profile')
+@extends('layouts.app')
+  @section('content')
+    <div class="container">
 
-@section('content')
-
-  
-  <div class="box-wrapper">
-    @foreach ($posts as $post)
-      <div class="box">
-        <div class="img_profile">
-            <a href="#">
-              <img src="/img#" alt="/img#.jpg">
-            </a>
+      <div class="landscape">
+        <img class="img-landscape"  src="../img/12/12_landscape.jpg" alt="landscape.jpg">
+        <div class="img-profile">
+          <img src="../img{{ $cat -> imgCat -> src }}" alt="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg">
         </div>
-        <div class="box-text">
-          <p><span>Title</span></p>
-          <p>#</p>
-
-          <p><span>Post</span></p>
-          <p>#</p>
-        </div>
-
-        {{-- @if (Auth::user()-> id == $cat -> user_id ) --}}
-          <div class="actions">
-            @include('elements.links_actions_post')
-          </div>
-        {{-- @endif --}}
-
       </div>
-    @endforeach
-  </div>
+
+      <header class="header-nav">
+        <nav>
+          <ul>
+            <li><a id='show-post-ajax-link'>Post</a></li>
+          @if (Auth::user()-> id == $cat -> user_id )
+            <li><a id='new-post-ajax-link'>New Post</a></li>
+          @else
+            <li><a href="#">Write a message</a></li>
+          @endif
+            <li><a href="#">messages sent</a></li>
+
+          </ul>
+        </nav>
+      </header>
 
 
+      <div class="main">
+        @yield('content')
+      </div>
+
+    </div>
+
+
+    </main>
+    </div>
 @endsection

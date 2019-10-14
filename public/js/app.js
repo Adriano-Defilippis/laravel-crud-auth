@@ -49359,6 +49359,42 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$(document).ready(init);
+
+function init() {
+  $(document).on('click', '#new-post-ajax-link', ajaxCreateFormPost);
+  $(document).on('click', '#show-post-ajax-link', ajaxShowPostIndex);
+}
+
+function ajaxCreateFormPost() {
+  $.ajax({
+    url: '/post/ajaxcreate',
+    method: 'GET',
+    data: {
+      "img_cat_id": 2
+    },
+    success: function success(response) {
+      $('div.main').html(response);
+    },
+    error: function error(_error) {
+      console.log(_error, 'errore');
+    }
+  });
+}
+
+function ajaxShowPostIndex() {
+  $.ajax({
+    url: '/post/ajaxshowpost',
+    method: 'GET',
+    data: {},
+    success: function success(response) {
+      $('div.main').html(response);
+    },
+    error: function error(_error2) {
+      console.log(_error2, 'errore');
+    }
+  });
+}
 
 /***/ }),
 

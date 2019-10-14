@@ -3,30 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cat;
-use App\Img_cat;
-use App\Post;
 
 class PostAuthController extends Controller
 {
-
-  /**
-   * Where to redirect users after registration.
-   *
-   * @var string
-   */
-  protected $redirectTo = 'cats.show';
-
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
-
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +13,7 @@ class PostAuthController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -42,10 +21,9 @@ class PostAuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createPost($id)
+    public function create()
     {
-      $cat= Cat::findOrFail($id);
-      return view('page.post_create', compact('cat'));
+        //
     }
 
     /**
@@ -56,16 +34,7 @@ class PostAuthController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-
-          "title" => "required",
-          "text" => "required",
-          "cat_id" => "required"
-        ]);
-
-
-        Post::create($validatedData);
-        return redirect('/cats/' . $validatedData['cat_id'] . '');
+        //
     }
 
     /**
@@ -110,12 +79,6 @@ class PostAuthController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
-        // $id_cat = Post::findOrFail($id) -> cat -> id;
-        Post::findOrFail($id) -> delete();
-
-
-
-        return view('/cats' . $id_cat . '');
+        //
     }
 }

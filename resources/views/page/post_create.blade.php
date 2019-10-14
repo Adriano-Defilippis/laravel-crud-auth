@@ -4,7 +4,7 @@
 
   <div class="wrapper-posts">
     <div class="box">
-      <form class="form-post-create" action="{{route('posts.store')}}" method="post">
+      <form class="form-post-create" action="#" method="post">
         @csrf
         @method('POST')
 
@@ -20,7 +20,10 @@
 
         <div class="hidden-label">
           <label for="cat_id"></label>
-          <input type="text" name="cat_id" value="{{ $cat -> id }}">
+          <input type="text" name="cat_id" value="#">
+
+          <label for="img_cat_id"></label>
+          <input type="text" name="cat_id" value="#">
 
         </div>
 

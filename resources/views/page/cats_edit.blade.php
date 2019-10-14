@@ -4,7 +4,7 @@
 
   {{-- @dd(Auth::user()-> id == $cat -> user_id) --}}
 
-  <form method="POST" action="{{ route('cats.update', $cat -> id) }}" files="true" enctype="multipart/form-data">
+  <form method="POST" action="#" files="true" enctype="multipart/form-data">
       @csrf
       @method('PUT')
 

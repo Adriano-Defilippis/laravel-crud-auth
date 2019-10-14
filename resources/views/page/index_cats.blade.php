@@ -14,8 +14,8 @@
           </div>
         @endif
         <div class="img_profile">
-            <a href="{{ route('cats.show', $cat -> id ) }}">
-              <img src="/img{{ $cat -> imgCat -> src }}" alt="img/{{ $cat -> id }}_{{ $cat -> imgCat -> src }}.jpg">
+            <a href="">
+              <img src="/img{{ $cat -> imgCat -> src }}" alt="img{{ $cat -> imgCat -> src }}.jpg">
             </a>
         </div>
       </div>

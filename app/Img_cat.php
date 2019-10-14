@@ -14,4 +14,9 @@ class Img_cat extends Model
 
       return $this -> hasOne(Cat::class);
     }
+
+    public function posts(){
+
+      return $this -> hasMany(Post::class);
+    }
 }

@@ -36,6 +36,13 @@ class AddForeingKey extends Migration
             -> on('cats');
           });
 
+      Schema::table('posts', function (Blueprint $table) {
+      $table->bigInteger('img_cat_id') -> unsigned();
+      $table->foreign('img_cat_id', 'postImgCat') //relation
+            -> references('id')
+            -> on('img_cats');
+          });
+
     }
 
     /**
@@ -62,6 +69,12 @@ class AddForeingKey extends Migration
 
         $table -> dropForeign('postCat');
         $table -> dropColumn('cat_id');
+      });
+
+      Schema::table('posts', function (Blueprint $table) {
+
+        $table -> dropForeign('postImgCat');
+        $table -> dropColumn('img_cat_id');
       });
 
     }
